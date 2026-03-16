@@ -26,10 +26,13 @@ let rec inorder tree =
     | Nill -> []
     | Node(v, left, right) -> inorder left @ [v] @ inorder right
 
-let rec toNodeList tree =
+let rec fold f acc tree =
     match tree with
-    | Nill -> []
-    | Node(v, left, right) -> toNodeList left @ [(v, left, right)] @ toNodeList right
+    | Nill -> acc
+    | Node(v, left, right) ->
+        let acc1 = fold f acc left
+        let acc2 = f acc1 v left right
+        fold f acc2 right
 
 let rec printTree tree space =
     match tree with
@@ -51,12 +54,12 @@ let rec readCount () =
         readCount ()
 
 let oneLeafNodes tree =
-    toNodeList tree
-    |> List.fold (fun acc (v, left, right) ->
+    fold (fun acc v left right ->
         match left, right with
         | Nill, Node(_, Nill, Nill) -> acc @ [v]
         | Node(_, Nill, Nill), Nill -> acc @ [v]
-        | _ -> acc) []
+        | _ -> acc) [] tree
+
 
 [<EntryPoint>]
 let main _ =
