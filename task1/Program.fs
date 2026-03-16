@@ -37,9 +37,6 @@ let rec readCount () =
         printfn "Ошибка: введите целое число"
         readCount ()
 
-let printList (lst: float list) =
-    printfn " Дерево: %A" lst
-
 [<EntryPoint>]
 let main _ =
     let n    = readCount ()
