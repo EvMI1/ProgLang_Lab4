@@ -26,6 +26,11 @@ let rec inorder tree =
     | Nill -> []
     | Node(v, left, right) -> inorder left @ [v] @ inorder right
 
+let rec map f tree =
+    match tree with
+    | Nill -> Nill
+    | Node(v, left, right) -> Node(f v, map f left, map f right)
+
 let rec readCount () =
     printf "Введите количество элементов: "
     match Int32.TryParse(Console.ReadLine()) with
@@ -41,7 +46,7 @@ let rec readCount () =
 let main _ =
     let n    = readCount ()
     let tree = fillTree n
-    printfn "Дерево: %A" (inorder tree)
-    let result = inorder tree |> List.map floor
-    printfn "Результат: %A" result
+    printfn "Исходное дерево: %A" (inorder tree)
+    let result = map floor tree
+    printfn "Результирующее дерево: %A" (inorder result)
     0
