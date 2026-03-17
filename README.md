@@ -18,6 +18,8 @@
 
 ![Снимок экрана 2026-03-16 в 21.35.40.png](https://github.com/EvMI1/ProgLang_Lab4/blob/main/screenshots/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202026-03-16%20%D0%B2%2021.35.40.png)
 
+![new test](https://github.com/EvMI1/ProgLang_Lab4/blob/main/screenshots/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202026-03-17%20%D0%B2%2010.10.36.png)
+
 # Задание 2
 
 ## Задача 1
