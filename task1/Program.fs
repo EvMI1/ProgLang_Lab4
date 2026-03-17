@@ -42,11 +42,21 @@ let rec readCount () =
         printfn "Ошибка: введите целое число"
         readCount ()
 
+let rec printTree tree space =
+    match tree with
+    | Nill -> ()
+    | Node(v, left, right) ->
+        printTree right (space + "    ")
+        printfn "%s%.2f" space v
+        printTree left (space + "    ")
+
 [<EntryPoint>]
 let main _ =
-    let n    = readCount ()
+    let n = readCount ()
     let tree = fillTree n
     printfn "Исходное дерево: %A" (inorder tree)
+    printTree tree ""
     let result = map floor tree
     printfn "Результирующее дерево: %A" (inorder result)
+    printTree result ""
     0
